@@ -1,2 +1,151 @@
-it works
-de lara chini chara
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Table practice</title>
+        <style>
+            table{
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                overflow: hidden;
+            }
+            thead{
+                background: #e3e3e3;
+            }
+            th{
+                text-align: left;
+                padding: 20px;
+                color: #666;
+                font-size: 14px;
+                font-weight: 600;
+                border: 1px solid #ececec;
+            }
+            td{
+                padding: 18px 20px;
+                font-size: 14px;
+                border: 1px solid #ececec
+            }
+            thead tr th:first-child{
+                border-top-left-radius: 12px;
+            }
+            thead tr th:last-child{
+                border-top-right-radius: 12px;
+            }
+            .red-bar{background-color: #ef4444;}
+            .green-bar{background-color: #22c55e;}
+            .yellow-bar{background-color: #facc15;}
+            .red-bar,
+            .green-bar,
+            .yellow-bar{
+                padding: 8px;
+                border-radius: 12px;
+            }
+        </style>
+    </head>
+    <body>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction</th>
+                        <th>Amount</th>
+                        <th>client</th>
+                        <th>Due Date</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>Web Redesign</div>
+                            <small>INV-2505</small>
+                        </td>
+                        <td>$1200.00</td>
+                        <td>
+                            <h4>Marcus Chen</h4>
+                            <span>PixelForge Studio</span>
+                        </td>
+                        <td>
+                            <div>12 January 2026</div>
+                            <small>14:15</small>
+                        </td>
+                        <td>
+                            <span class="red-bar">Overdue</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Omnichannel Phase 2</div>
+                            <small>INV-2005</small>
+                        </td>
+                        <td>$1200.00</td>
+                        <td>
+                            <h4>Elena Rostova</h4>
+                            <span>Vortex Media</span>
+                        </td>
+                        <td>
+                            <div>24 May 2026</div>
+                            <small>14:15</small>
+                        </td>
+                        <td>
+                            <span class="green-bar">Paid</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Kinetic Typography Intro</div>
+                            <small>INV-2026-094</small>
+                        </td>
+                        <td>$2100.00</td>
+                        <td>
+                            <h4>Kai Tanaka</h4>
+                            <span>Nova Animation</span>
+                        </td>
+                        <td>
+                            <div>20 May 2026</div>
+                            <small>14:15</small>
+                        </td>
+                        <td>
+                            <span class="red-bar">Overdue</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                         <div>Social Media Ad Assets</div>
+                         <small>INV-2026-095</small>
+                        </td>
+                        <td>$15000.00</td>
+                        <td>
+                            <h4>Elena Rostova</h4>
+                            <span>Echo Creative</span>
+                        </td>
+                        <td>
+                            <div>30 March 2026</div>
+                            <small>14:15</small>
+                        </td>
+                        <td>
+                            <span class="green-bar">Paid</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Promo Video Redesign</div>
+                            <small>INV-2026-094</small>
+                        </td>
+                        <td>$1000.00</td>
+                        <td>
+                            <h4>Leo Novak</h4>
+                            <span>Slack</span>
+                        </td>
+                        <td>
+                            <div>12 February 2026</div>
+                            <small>14:15</small>
+                        </td>
+                        <td>
+                            <span class="yellow-bar">Waiting</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </body>
+</html>
