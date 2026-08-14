@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration Form</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background: #f1f3f6;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .full-box{
+                width: 900px;
+                min-height: 550px;
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                display: flex;
+            }
+            .left-side {
+                width: 45%;
+                position: relative;
+            }
+            .left-side img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .left-side h2 {
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                color: white;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .right-side {
+                width: 55%;
+                padding: 40px;
+            }
+            .right-side h1 {
+                text-align: center;
+                margin-bottom: 25px;
+                color: #222;
+            }
+            .input-box {
+                margin-bottom: 15px;
+            }
+            .input-box label {
+                display: block;
+                margin-bottom: 6px;
+                font-weight: bold;
+                color: #333;
+            }
+            .input-box input,
+            .input-box select {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 15px;
+            }
+            .signup-btn {
+                width: 100%;
+                padding: 13px;
+                margin-top: 10px;
+                border-radius: 6px;
+                border: none;
+                background: #007bff;
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            @media (max-width: 768px) {
+                .full-box {
+                    width: 90%;
+                    flex-direction: column;
+                }
+                .left-side {
+                    width: 100%;
+                    height: 250px;
+                }
+                .right-side {
+                    width: 100%;
+                    padding: 30px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="full-box">
+            <div class="left-side">
+                <h2>A NEW WAY TO<br>
+                    COLLABORATE
+                </h2>
+                <img src="https://images.pexels.com/photos/14876425/pexels-photo-14876425.jpeg">
+            </div>
+            <div class="right-side">
+                <h1>Get Started!</h1>
+                <form action="/action_page.php" method="get">
+                    <div class="input-box">
+                        <label for="owner-name">Full Name</label>
+                        <input type="text" name="name" id="owner-name" placeholder="Enter your name">
+                    </div>
+                    <div class="input-box">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="number" name="phone" id="phone-number" placeholder="Enter your phone number">
+                    </div>
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="input-box">
+                        <label for="grnder">Gender</label>
+                        <select name="gender" id="gender">
+                            <option selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="sala gay">Others</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="country">Country</label>
+                        <select name="country" id="country">
+                            <option selected>Select Country</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="india">India</option>
+                            <option value="pakistan">Pakistan</option>
+                            <option value="nepal">Nepal</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <button class="signup-btn">Sign Up</button>     
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
