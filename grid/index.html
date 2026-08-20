@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background: url(https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&fbclid=IwY2xjawT0TCpwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMUE4SWJ2QzllV2ZRRWJSMVlzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeQYRQyNF-wX6f0HudGZQ3mUYNahFbcXbEl_UmW7ZLD7ea7-iGZGBwyuPB1So_aem_ZmFrZWR1bW15MTZieXRlcw);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                min-height: 100vh;
+            }
+            .grid {
+                margin: 50px auto;
+                max-width: 560px;
+                display: grid;
+                gap: 20px;
+                grid-template-columns: repeat(12, 1fr);
+            }
+            .card {
+                background: rgb(255 255 255 / 10%);
+                padding: 25px;
+                backdrop-filter: blur(10%) saturate(1.1);
+                border: 1px solid rgb(255 255 255 / 30%);
+                border-radius: 20px;
+                color: #fff;
+            }
+            .weather {
+                grid-area: 1 / 1 / 2 / 13;
+            }
+            .podcast {
+                grid-area: 2 / 1 / 3 / 7;
+            }
+            .note {
+                grid-area: 2 / 7 / 3 / 13;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid">
+            <div class=" card weather">
+                <div class="weather-location">San Francisco</div>
+                <div class="weather-current">
+                    <div>
+                        <h1>54°</h1>
+                    </div>
+                    <div class="weather-summary">
+                        <div class="weather-icon">☁️</div>
+                        <div>Partly Coudy</div>
+                        <div>H:57° L:49°</div>
+                    </div>
+                </div>
+                <div class="weather-hourly">
+                    <div><span>10 AM</span><spna>🌤️</spna><strong>54°</strong></div>
+                    <div><span>10 AM</span><span>🌤️</span><strong>54°</strong></div>
+                    <div><span>11 AM</span><span>🌤️</span><strong>55°</strong></div>
+                    <div><span>12 PM</span><span>☀️</span><strong>56°</strong></div>
+                    <div><span>1 PM</span><span>☀️</span><strong>57°</strong></div>
+                    <div><span>2 PM</span><span>☀️</span><strong>57°</strong></div>
+                    <div><span>3 PM</span><span>☀️</span><strong>56°</strong></div>
+                </div>
+            </div>
+            <div class="card podcast">
+                <div class="podcast-header">
+                    <div class="podcast-cover"><img src="" alt=""></div>
+                    <div class="podcast-icon">🎙️</div>
+                </div>
+                <div class="podcast-date">Mar 19</div>
+                <div class="podcast-title">What is a Quantum Computer?</div>
+                <div class="podcast-duration"> ▶ <span>39m</span></div>
+            </div>
+            <div class="card note">
+                <div class="note-icon">🙂</div>
+                <div class="note-title"> Call Mom </div>
+            </div>
+        </div>
+    </body>
+</html>
