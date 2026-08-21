@@ -9,11 +9,65 @@
                 box-sizing: border-box;
             }
             body {
+                font-family: Arial, sans-serif;
                 background: url(https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&fbclid=IwY2xjawT0TCpwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMUE4SWJ2QzllV2ZRRWJSMVlzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeQYRQyNF-wX6f0HudGZQ3mUYNahFbcXbEl_UmW7ZLD7ea7-iGZGBwyuPB1So_aem_ZmFrZWR1bW15MTZieXRlcw);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
                 min-height: 100vh;
+            }
+            .weather {
+                padding: 25px;
+            }
+            .weather-location {
+                font-size: 28px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+            .weather-current {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .weather-current h1 {
+                font-size: 72px;
+                font-weight: 300;
+            }
+            .weather-summary {
+                text-align: right;
+                font-size: 20px;
+                font-weight: 500;
+            }
+            .weather-icon {
+                font-size: 32px;
+                margin-bottom: 3px;
+            }
+            .weather-hourly {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                text-align: center;
+            }
+            .podcast {
+                padding: 28px;
+            }
+            .podcast-cover {
+                width: 80px;
+                height: 80px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .podcast-cover img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .podcast-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .podcast-icon {
+                font-size: 32px;
             }
             .grid {
                 margin: 50px auto;
@@ -25,7 +79,7 @@
             .card {
                 background: rgb(255 255 255 / 10%);
                 padding: 25px;
-                backdrop-filter: blur(10%) saturate(1.1);
+                backdrop-filter: blur(10px) saturate(1.1);
                 border: 1px solid rgb(255 255 255 / 30%);
                 border-radius: 20px;
                 color: #fff;
@@ -56,7 +110,6 @@
                     </div>
                 </div>
                 <div class="weather-hourly">
-                    <div><span>10 AM</span><spna>🌤️</spna><strong>54°</strong></div>
                     <div><span>10 AM</span><span>🌤️</span><strong>54°</strong></div>
                     <div><span>11 AM</span><span>🌤️</span><strong>55°</strong></div>
                     <div><span>12 PM</span><span>☀️</span><strong>56°</strong></div>
@@ -67,7 +120,7 @@
             </div>
             <div class="card podcast">
                 <div class="podcast-header">
-                    <div class="podcast-cover"><img src="" alt=""></div>
+                    <div class="podcast-cover"><img src="https://images.pexels.com/photos/10260863/pexels-photo-10260863.jpeg" alt="Album"></div>
                     <div class="podcast-icon">🎙️</div>
                 </div>
                 <div class="podcast-date">Mar 19</div>
