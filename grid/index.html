@@ -16,13 +16,15 @@
                 background-position: center;
                 min-height: 100vh;
             }
-            .weather {
-                padding: 25px;
-            }
             .weather-location {
                 font-size: 28px;
                 font-weight: 600;
-                margin-bottom: 12px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .cloud {
+                font-size: 45px;
+                margin-top: -20px;
             }
             .weather-current {
                 display: flex;
@@ -35,20 +37,20 @@
             }
             .weather-summary {
                 text-align: right;
-                font-size: 20px;
+                font-size: 26px;
                 font-weight: 500;
-            }
-            .weather-icon {
-                font-size: 32px;
-                margin-bottom: 3px;
             }
             .weather-hourly {
                 display: grid;
                 grid-template-columns: repeat(6, 1fr);
                 text-align: center;
             }
-            .podcast {
-                padding: 28px;
+            .weather-hourly div {
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                justify-content: space-evenly;
+                font-size: 21px;
             }
             .podcast-cover {
                 width: 80px;
@@ -67,7 +69,25 @@
                 align-items: flex-start;
             }
             .podcast-icon {
-                font-size: 32px;
+                font-size: 40px;
+            }
+            .podcast-date,
+            .podcast-title,
+            .podcast-duration {
+                font-size: 20px;
+            }
+            .play {
+                display: inline-flex;
+                align-items: center;
+                padding: 8px 18px;
+                border-radius: 30px;
+                background: rgb(255 255 255 / 10%);
+            }
+            .note-icon {
+                font-size: 50px;
+            }
+            .note-title {
+                font-size: 20px;
             }
             .grid {
                 margin: 50px auto;
@@ -81,31 +101,41 @@
                 padding: 25px;
                 backdrop-filter: blur(10px) saturate(1.1);
                 border: 1px solid rgb(255 255 255 / 30%);
-                border-radius: 20px;
+                border-radius: 40px;
                 color: #fff;
             }
             .weather {
                 grid-area: 1 / 1 / 2 / 13;
+                padding: 25px;
             }
             .podcast {
                 grid-area: 2 / 1 / 3 / 7;
+                height: 275px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly
             }
             .note {
                 grid-area: 2 / 7 / 3 / 13;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
             }
         </style>
     </head>
     <body>
         <div class="grid">
             <div class=" card weather">
-                <div class="weather-location">San Francisco</div>
+                <div class="weather-location">
+                    <span>San Francisco</span>
+                    <span class="cloud">☁️</span>
+                </div>
                 <div class="weather-current">
                     <div>
                         <h1>54°</h1>
                     </div>
                     <div class="weather-summary">
-                        <div class="weather-icon">☁️</div>
-                        <div>Partly Coudy</div>
+                        <div>Partly Cloudy</div>
                         <div>H:57° L:49°</div>
                     </div>
                 </div>
@@ -125,7 +155,7 @@
                 </div>
                 <div class="podcast-date">Mar 19</div>
                 <div class="podcast-title">What is a Quantum Computer?</div>
-                <div class="podcast-duration"> ▶ <span>39m</span></div>
+                <div class="podcast-duration"> <span class="play">▶39m</span></div>
             </div>
             <div class="card note">
                 <div class="note-icon">🙂</div>
