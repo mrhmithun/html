@@ -10,7 +10,7 @@
             }
             body {
                 font-family: Arial, sans-serif;
-                background: url(https://images.pexels.com/photos/1569153/pexels-photo-1569153.jpeg);
+                background: url('https://images.pexels.com/photos/8953377/pexels-photo-8953377.jpeg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -29,14 +29,13 @@
                 color: white;
             }
             .upper {
-                background: #808080;
+                background: rgba(135, 135, 135, 30%);
                 border-radius: 30px;
                 backdrop-filter: blur(10px) saturate(1.1);
                 padding: 15px;
             }
             .weather-current {
                 display: flex;
-                justify-content: flex-start;
                 gap: 25px;
             }
             .mid-text {
@@ -69,6 +68,7 @@
                 padding: 0 12px;
                 font-size: 12px;
                 color: white;
+                margin-top: 8px;
             }
             .time-bar > div {
                 display: flex;
@@ -99,8 +99,11 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 0 2px;
-                font-size: 13px;
+                font-size: 16px;
                 color: rgba(255, 255, 255, 65%);
+            }
+            .humidity > div > span:last-child {
+                color: white;
             }
             .weather-hourly {
                 display: grid;
@@ -120,6 +123,18 @@
                 padding: 10px 2px;
                 gap: 9px;
                 font-size: 12px;
+            }
+            .weather-hourly > div > span:first-child {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 75%);
+            }
+            .weather-hourly > div > span:nth-child(3) {
+                font-size: 14px;
+                color: white;
+            }
+            .weather-hourly > div > span:last-child {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 55%);
             }
         </style>
     </head>
@@ -141,7 +156,7 @@
                     </div>
                     <div>15 h 32 m</div>
                     <div>
-                        <span>8:13am</span>
+                        <span>8:13pm</span>
                         <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sunset-icon lucide-sunset"><path d="M12 10V2"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m16 6-4 4-4-4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span>
                     </div>
                 </div>
