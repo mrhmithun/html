@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+            }
+            .fullpage {
+                width: 100%;
+                min-height: 100vh;
+            }
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                margin: 40px 6%;
+            }
+            .logo {
+                font-size: 14px;
+                letter-spacing: 3px;
+                color: #444;
+                font-weight: 500;
+            }
+            .links {
+                font-size: 14px;
+                color: #444;
+                letter-spacing: 3px;
+                display: flex;
+                gap: 46px;
+            }
+            .links > span:first-child {
+                font-weight: bold;
+            }
+            .mid-box {
+                padding: 0 6%;
+                display: flex;
+            }
+            .left-box {
+                width: 45%;
+            }
+            .right-box {
+                width: 55%;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 15px;
+                margin-top: 30px;
+            }
+            .right-box img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            .image1 {
+                grid-area: 1/ 1/ 3/ 8;
+            }
+            .image2 {
+                grid-area: 1/ 8/ 2/ 13;
+            }
+            .image3 {
+                grid-area: 2/ 8/ 3/ 13;
+            }
+            .deco-part {
+                display: flex;
+                justify-content: space-between;
+                padding-right: 10px;
+            }
+            .title {
+                font-size: 60px;
+                font-weight: 800;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            .description {
+                padding-right: 150px;
+                margin-bottom: 135px;
+                font-size: 24px;
+            }
+            .order-btn {
+                height: 70px;
+                width: 150px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #fff;
+                background-color: #eba453;
+                border: 0;
+                border-radius: 5px;
+            }
+            .bottom-bar {
+                height: 50px;
+                background-color: #eba453;
+                margin-top: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="fullpage">
+            <header class="navbar">
+                <div class="logo">REALLY GREAT SITE</div>
+                <div class="links">
+                    <span>HOME</span>
+                    <span>ABOUT</span>
+                    <span>SHOP</span>
+                    <span>CONTACT</span>
+                </div>
+            </header>
+            <div class="mid-box">
+                <div class="left-box">
+                    <div class="deco-part">
+                        <div><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-icon lucide-triangle"><path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/></svg></div>
+                        <div><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div>
+                    </div>
+                    <h1 class="title">Neutral<br>Collection</h1>
+                    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae quidem rem ratione, doloribus nulla placeat. Eligendi, labore laudantium maxime architecto veritatis facilis tenetur maiores iusto ullam commodi, vitae nobis iure.</p>
+                    <button class="order-btn">Order Now</button>
+                </div>
+                <div class="right-box">
+                    <div class="image1"><img src="https://images.pexels.com/photos/9976125/pexels-photo-9976125.jpeg"></div>
+                    <div class="image2"><img src="https://images.pexels.com/photos/6297086/pexels-photo-6297086.jpeg"></div>
+                    <div class="image3"><img src="https://images.pexels.com/photos/6198662/pexels-photo-6198662.jpeg"></div>
+                </div>
+            </div>
+            <div class="bottom-bar"></div>
+        </div>
+    </body>
+</html>
