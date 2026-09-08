@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background: #fff;
+            }
+            .fullpage {
+                min-height: 100vh;
+                width: 100%;
+            }
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 40px 6%;
+            }
+            .logo svg{
+                height: 24px;
+                width: 24px;
+            }
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 600;
+            }
+            .links {
+                font-weight: 600;
+                display: flex;
+                gap: 15px;
+            }
+            .nav-right {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .line {
+                height: 20px;
+                width: 1px;
+                border-left:1px solid #ddd;
+            }
+            .login {
+                font-weight: 600;
+            }
+            .btn {
+                padding: 12px 18px;
+                border-radius: 21px;
+                border: 1px solid black;
+            }
+            .btn > span:nth-child(1) {
+                font-weight: 600;
+            }
+            .mid-box {
+                background: linear-gradient( to bottom, #a8a8a8, #c9c9c9 65%, #f3f3f3 );
+                margin-left: 1%;
+                margin-right: 1%;
+                display: flex;
+                border-radius: 20px;
+            }
+            .left-side {
+                width: 40%;
+                padding: 82px 0 50px 70px;
+            }
+            .users {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+            .users-logo {
+                height: 35px;
+                width: 35px;
+                color: white;
+                background-color: black;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .users-text {
+                font-family: 'Inter', serif;
+            }
+            .title {
+                font-size: 190px;
+                font-weight: 500;
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(0, 0, 0, 25%);
+            }
+            .description {
+                font-size: 26px;
+                padding: 25px 0;
+                line-height: 40px;
+            }
+            .reviews {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding-bottom: 17px;
+                border-bottom: 1px solid rgba(0, 0, 0, 25%);
+            }
+            .review-stars {
+                height: 36px;
+                margin-left: 10px;
+            }
+            .review-person svg {
+                color: white;
+            }
+            .review-person {
+                background-color: rgb(106, 140, 145);
+                height: 35px;
+                width: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            .review-text {
+                font-family: 'Inter', serif;
+                font-size: 17px;
+            }
+            .buttons {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                padding: 40px 0;
+            }
+            .download {
+                padding: 18px 28px;
+                border-radius: 26px;
+                background-color: black;
+                color: white;
+                border: none;
+            }
+            .pricing {
+                font-weight: 600;
+            }
+            .right-side {
+                width: 60%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .image-box {
+                height: 550px;
+                width: 340px;
+                background: url(https://images.pexels.com/photos/18506003/pexels-photo-18506003.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 40px;
+                display: flex;
+                gap: 85px;
+            }
+            .comments {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 100px;
+            }
+            .how {
+                height: 30px;
+                width: 165px;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 20px 10px;
+                border-radius: 20px;
+                margin-left: -50px;
+            }
+            .how > span:first-child {
+                height: 20px;
+                width: 20px;
+                background-color: rgb(253, 114, 0);
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .do {
+                height: 30px;
+                width: 230px;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 20px 10px;
+                border-radius: 20px;
+                margin-left: -114px;
+            }
+            .do > span:first-child {
+                height: 20px;
+                width: 20px;
+                background-color: rgb(0, 153, 255);
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .little-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .first-box {
+                height: 150px;
+                width: 150px;
+                background: rgba(255, 255, 255, 25%);
+                backdrop-filter: blur(15px);
+                padding: 18px;
+                border-radius: 20px;
+                margin-left: 100px;
+                margin-bottom: 178px;
+            }
+            .first-box > span:nth-child(1) {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            .first-box > span:nth-child(3) {
+                font-size: 40px;
+                font-weight: 600;
+                display: inline-block;
+                margin: 7px 0;
+            }
+            .second-box {
+                height: 150px;
+                width: 300px;
+                background: rgba(255, 255, 255, 25%);
+                backdrop-filter: blur(15px);
+                padding: 18px;
+                border-radius: 20px;
+                display: flex;
+                gap: 25px;
+            }
+            .shoe {
+                height: 112px;
+                width: 112px;
+                background: url(https://images.pexels.com/photos/13236691/pexels-photo-13236691.jpeg);
+                background-size: cover;
+                background-position: center;
+                border-radius: 10px;
+            }
+            .last-text {
+                font-size: 17px;
+            }
+            .last-text > span:nth-child(3) {
+                font-size: 24px;
+                font-weight: 600;
+                display: inline-block;
+                margin-top: 6px;
+            }
+            .last-text > span:nth-child(5) {
+                display: inline-block;
+                background-color: #fff;
+                padding: 2px 10px;
+                border-radius: 15px;
+                margin-top: 10px;
+            }
+            .bottom-part {
+                margin: 0 6%;
+                height: 105px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 60px;
+            }
+            .bottom-part svg {
+                width: 115px;
+                height: 40px;
+            }
+            .bottom-part > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="fullpage">
+            <header class="navbar">
+                <div class="logo">
+                    <span><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Analogue</title><path d="M5.468 12.804a5.145 5.145 0 10-.644 10.27 5.145 5.145 0 00.644-10.27zm17.841 2.562L16.45 3.484a5.146 5.146 0 00-8.912 5.15l6.86 11.878a5.148 5.148 0 007.031 1.885 5.146 5.146 0 001.881-7.031z"/></svg></span>
+                    <span>/sales@reelers.io</span>
+                </div>
+                <div class="links">
+                    <span>Product</span>
+                    <span>.</span>
+                    <span>Solutions</span>
+                    <span>.</span>
+                    <span>Pricing</span>
+                    <span>.</span>
+                    <span>Developers</span>
+                </div>
+                <div class="nav-right">
+                    <span class="line"></span>
+                    <span class="login">Log in</span>
+                    <button class="btn">
+                        <span>Get it Now</span>–<span>It's Free</span>
+                    </button>
+                </div>
+            </header>
+            <div class="mid-box">
+                <div class="left-side">
+                    <div class="users">
+                        <div class="users-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="users-text">
+                            <strong>20M+ Users</strong>
+                            <br>Read Our
+                            <u>Success Stories</u>
+                        </div>
+                    </div>
+                    <h1 class="title">
+                        Grow
+                    </h1>
+                    <p class="description">
+                        Drive Sales Growth, And Harness Ai-Powered User<br> Content – Up To 50x Faster.
+                    </p>
+                    <div class="reviews">
+                        <div class="review-person">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"/><circle cx="12" cy="11" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+                        </div>
+                        <div class="review-text">
+                            Loved the performance<br>100% satisfied
+                        </div>
+                        <div class="review-stars">
+                            /  ★<strong>4.9</strong>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="download">Download–It's Free</button>
+                        <div class="pricing"><u>Our Pricing</u> ↗</div>
+                    </div>                   
+                </div>
+                <div class="right-side">
+                    <div class="image-box">
+                        <div class="comments">
+                            <div class="how">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                                </span>
+                                <span>How is the fit?</span>
+                            </div>
+                            <div class="do">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                                </span>
+                                <span>Do you like the design?</span>
+                            </div>
+                        </div>
+                        <div class="little-box">
+                            <div class="first-box">
+                                <span>– UP TO</span><br>
+                                <span>60%</span><br>
+                                <span>More sales this week</span>
+                            </div>
+                            <div class="second-box">
+                                <div class="shoe"></div>
+                                <div class="last-text">
+                                    <span>Nike Shoes<br>Jordan</span><br>
+                                    <span>$849.99</span><br>
+                                    <span>★4.6</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-part">
+                <div>
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Rakuten Kobo</title><path d="M0 13.192h.874v3.115l1.21-1.432h1.047l-1.385 1.619 1.51 2.125H2.21L.889 16.732H.874v1.887H0zm3.177 3.555c0-1.227.575-1.957 1.653-1.957 1.077 0 1.655.73 1.655 1.957s-.575 1.957-1.651 1.957-1.652-.731-1.652-1.957zm1.653 1.341c.627 0 .722-.643.722-1.344 0-.7-.095-1.343-.722-1.343-.628 0-.722.646-.722 1.346s.091 1.341.722 1.341m2.999-2.764h.016a1.09 1.09 0 0 1 .967-.535c.898 0 1.29.763 1.29 1.957 0 1.045-.362 1.957-1.581 1.957-.978 0-1.564-.559-1.564-1.678v-3.83h.872zm.699 2.767c.56 0 .653-.73.653-1.344 0-.676-.07-1.398-.653-1.398-.527 0-.699.771-.699 1.398 0 .935.14 1.344.699 1.344m2.011-1.344c0-1.227.573-1.957 1.65-1.957 1.078 0 1.653.731 1.653 1.957s-.575 1.957-1.653 1.957c-1.077 0-1.65-.73-1.65-1.957m1.655 1.341c.629 0 .724-.643.724-1.344 0-.7-.095-1.343-.724-1.343s-.723.643-.723 1.343c0 .701.094 1.344.723 1.344m7.126-6.807L5.956 12.439 4.8 11.281zM6.141 6.604h.903v3.935h-.903v-.17c-.245.174-.538.27-.839.272-1.018 0-1.791-.928-1.791-2.067s.773-2.068 1.791-2.068c.301.003.594.098.839.273zm-.839 3.088c.502 0 .857-.493.857-1.118s-.355-1.118-.857-1.118-.868.494-.868 1.118c0 .623.366 1.118.868 1.118m8.006-3.088h.894v3.935h-.894v-.14a1.37 1.37 0 0 1-.759.242c-.951 0-1.599-.773-1.599-1.723V6.604h.893v2.314c0 .434.297.801.732.801s.733-.367.733-.801zm8.332 3.935h-.897V6.61h.897v.14c.224-.155.489-.239.761-.244.95 0 1.599.773 1.599 1.723v2.31h-.893v-2.31c0-.434-.298-.8-.733-.8-.434 0-.734.366-.734.8zm-20.705 0H.013V5.627H1.55c.927.006 1.686.77 1.686 1.697 0 .546-.264 1.06-.707 1.378l1.384 1.837H2.741L1.592 9.017H.935zm0-3.982v1.525h.642a.767.767 0 0 0 .764-.763.77.77 0 0 0-.764-.763l-.032.001zm15.679 3.054v.003l.588.785a1.8 1.8 0 0 1-.875.245 1.353 1.353 0 0 1-1.331-1.346l.002-.059v-1.7h-.473v-.935h.473v-.978h.894v.978h.768v.935h-.765v1.686l-.002.043c0 .234.187.43.422.441a.54.54 0 0 0 .299-.098m-7.352-1.16 1.78 2.092H9.789L8.47 8.925v1.618h-.922V5.296h.922v2.68l1.073-1.372h1.253zm9.416-1.947c1.014 0 1.934.931 1.713 2.345h-2.577c.118.9 1.137 1.358 1.748.457l.79.456c-.508.72-1.113.882-1.584.882-.935 0-1.866-.85-1.866-2.07 0-1.16.742-2.07 1.776-2.07m.782 1.561c-.175-.979-1.423-.923-1.612 0z"/></svg>
+                </div>
+                <div>
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Crayon</title><path d="M1.9485 16.5624C3.1842 17.7981 4.8 18.4159 6.416 18.4159c1.6158 0 3.2317-.6179 4.4673-1.8535l5.798-5.798-1.4257-1.4258-5.798 5.7505c-1.6634 1.6634-4.3723 1.6634-6.0832 0l-.095-.095c-1.6635-1.6634-1.6635-4.3723 0-6.0832l.095-.095c1.6633-1.6635 4.3723-1.6635 6.0832 0l.4752.5227 1.4258-1.4258-.4753-.5227c-2.4713-2.4713-6.5109-2.4713-8.9822 0l-.0475.1425c-2.4713 2.4713-2.4713 6.511 0 8.9823zm20.0556-9.1248c-1.2357-1.2357-2.8515-1.8535-4.4674-1.8535-1.6158 0-3.2317.6179-4.4673 1.8535l-5.798 5.798 1.4257 1.4258 5.798-5.7505c1.6634-1.6634 4.3723-1.6634 6.0832 0l.095.095c1.6634 1.6634 1.6634 4.3723 0 6.0832l-.095.095c-1.6633 1.6635-4.3723 1.6635-6.0832 0l-.4752-.4752-1.4258 1.4258.4753.4752c2.4713 2.4713 6.5109 2.4713 8.9822 0l.095-.095c2.4713-2.4713 2.4713-6.511 0-8.9823-.0475 0-.1425-.095-.1425-.095z"/></svg>
+                </div>
+                <div>
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Jeep</title><path d="M4.1651 7.1687v5.2011c0 .6762-.444 1.0777-1.1628 1.0777-.7185 0-1.0992-.5283-1.0992-1.0992v-.9299H0v.9514c0 .972.296 2.7068 3.0235 2.7068 2.7272 0 3.1082-1.8614 3.1082-2.7488V7.1687Zm4.9177 2.1562c-1.7973 0-2.6003 1.6485-2.6003 3.0657 0 1.4168.9094 2.7912 2.7695 2.7912 1.6285.021 2.707-1.0361 2.707-1.8187h-1.7977s-.2113.5078-.8458.5078c-.6343 0-.9934-.3596-.9934-1.2265h3.6576c0-2.7277-1.3526-3.3195-2.897-3.3195zm5.8471 0c-1.7968 0-2.6007 1.6485-2.6007 3.0657 0 1.4168.9094 2.7912 2.7705 2.7912 1.628.021 2.7067-1.0361 2.7067-1.8187h-1.7978s-.2116.5078-.8454.5078c-.6348 0-.9942-.3596-.9942-1.2265h3.6574c0-2.7277-1.3523-3.3195-2.8965-3.3195zm6.7435.0635c-.9132 0-1.3186.4962-1.3401.522-.1283.1538-.2875.3165-.2875-.0782v-.2959h-1.8193v7.295h1.8398V14.822c0-.148.1478-.126.2543 0 .1063.1277.5711.4443 1.3752.4443C23.155 15.2663 24 13.9978 24 12.264c0-2.2415-1.4162-2.8757-2.3266-2.8756Zm-12.401 1.1203c.6766 0 .972.5073.972 1.0365H8.3843c0-.5718.2327-1.0365.8882-1.0365zm5.8468 0c.6767 0 .9724.5073.9724 1.0365H14.231c0-.5718.2332-1.0365.8883-1.0365zm5.9204.296c.9318 0 1.1.7189 1.1 1.4593 0 .74-.1272 1.7124-1.0141 1.7124-.8884 0-1.1212-.5709-1.1017-1.6486.022-1.0788.4441-1.523 1.0158-1.523zm2.2813 4.5664a.5855.5855 0 0 0-.5856.5857c0 .3233.2617.5856.5856.5856.3218 0 .585-.2623.585-.5856 0-.3233-.2632-.5857-.585-.5857zm0 .062a.524.524 0 0 1 .5236.5237c0 .2884-.2346.5246-.5236.5246a.5258.5258 0 0 1-.525-.5246c0-.289.2352-.5236.525-.5236zm-.2108.2024v.6208h.0725v-.2689h.1764l.1159.269h.0806l-.1216-.2873c.0386-.0133.0514-.0227.072-.0447.0266-.0287.0434-.0739.0434-.115 0-.1034-.0796-.174-.195-.174zm.0705.0676h.1722c.072 0 .1177.041.1177.1045 0 .072-.0485.1168-.1278.1168h-.1621z"/></svg>
+                </div>
+                <div>
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>discord.js</title><path d="M19.427 5.015c-1.586 0-2.907.607-3.702 1.561h.002-.002a3.448 3.448 0 0 0-.806 2.401c.06 1.485.92 2.423 1.92 3.017a6.316 6.316 0 0 0 .796.397l1.833.804c.986.41 1.735.717 1.999 1.39.066.17.102.363.102.588 0 1.05-.844 1.73-2.348 1.73-1.257 0-2.555-.617-3.523-1.524l-1.11 1.31-.27.318a6.93 6.93 0 0 0 4.841 1.978c2.441 0 4.092-1.179 4.64-2.78A3.754 3.754 0 0 0 24 14.988c0-.328-.032-.628-.091-.906-.23-1.07-.879-1.789-1.783-2.321a7.17 7.17 0 0 0-.001 0 7.17 7.17 0 0 0-.844-.42l-1.813-.763c-.895-.364-1.737-.69-2.032-1.35a1.319 1.319 0 0 1-.11-.545c0-.99.824-1.587 2.101-1.587 1.153 0 2.08.433 2.925 1.154l.897-1.106.34-.419a5.96 5.96 0 0 0-4.162-1.71ZM0 5.015v10.313h3.904c1.024 0 1.808-.162 2.535-.53a2.147 2.147 0 0 1 2.247-2.225c.372-.755.522-1.505.522-2.49 0-1.016-.191-1.9-.575-2.666a4.278 4.278 0 0 0-1.738-1.769c-.766-.427-1.694-.633-2.8-.633Zm10.726 0v9.707c0 1.187-.96 2.15-2.144 2.15a2.141 2.141 0 0 1-1.816-1.007l-.215.093a7.533 7.533 0 0 1-.625.24 6.853 6.853 0 0 1-1.113.241c.42 1.344 2.06 2.662 3.974 2.538 1.804 0 3.053-.89 3.717-2.18.372-.72.562-1.567.562-2.454V5.015Zm-8.251 2.21h1.488c.87 0 1.533.25 1.975.766.442.516.662 1.223.662 2.136 0 .928-.236 1.65-.692 2.18-.457.546-1.135.811-2.034.811H2.475Zm6.113 6.142a1.355 1.355 0 1 0 0 2.71 1.355 1.355 0 0 0 0-2.71z"/></svg>
+                </div>
+                <div>
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Dropbox</title><path d="M6 1.807L0 5.629l6 3.822 6.001-3.822L6 1.807zM18 1.807l-6 3.822 6 3.822 6-3.822-6-3.822zM0 13.274l6 3.822 6.001-3.822L6 9.452l-6 3.822zM18 9.452l-6 3.822 6 3.822 6-3.822-6-3.822zM6 18.371l6.001 3.822 6-3.822-6-3.822L6 18.371z"/></svg>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
