@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            :root {
+                --green: #2f7d3b;
+                --dark-green: #24652f;
+                --light-green: #eaf4eb;
+                --white: #fff;
+                --card-color: #f7f8f7;
+                --secondary-text: #777;
+                --secondary-border: #edf0ed;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background: var(--white);
+            }
+            .website {
+                max-width: 1200px;
+                margin: auto;
+            }
+            .navbar {
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                max-width: 967px;
+                margin: auto;
+                padding: 0 10px;
+                align-items: center;
+                background: var(--card-color);
+                margin-top: 20px;
+                border-radius: 10px;
+            }
+            .logo {
+                color: var(--green);
+                font-size: 15px;
+                font-weight: 800;
+            }
+            .nav-links {
+                display: flex;
+                gap: 25px;
+            }
+            a {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                color: black;
+            }
+            .donate {
+                background: var(--green);
+                color: var(--white);
+                padding: 10px 17px;
+                font-size: 10px;
+                font-weight: 700;
+                border-radius: 6px;
+                border: none;
+            }
+            .hero {
+                min-height: 250px;
+                display: grid;
+                grid-template-columns: 1fr 1.15fr;
+                max-width: 1100px;
+                gap: 45px;
+                margin: auto;
+                margin-top: 95px;
+            }
+            .hero-content {
+                padding: 20px 0 0;
+            }
+            .hero-content > h1 {
+                font-size: 31px;
+                margin-bottom: 18px;
+            }
+            .hero-content > h1 > span {
+                color: var(--green);
+            }
+            .hero-content p{
+                font-size: 12px;
+                color: var(--secondary-text);
+                margin-bottom: 20px;
+                max-width: 380px;
+            }
+            .hero-buttons{
+                display: flex;
+                gap: 15px;
+            }
+            .primary-btn {
+                padding: 10px 15px;
+                border-radius: 5px;
+                background: var(--green);
+                color: var(--white);
+                border: none;
+                font-size: 10px;
+                font-weight: 600;
+            }
+            .secondary-btn {
+                padding: 10px 15px;
+                border-radius: 5px;
+                background: var(--white);
+                color: var(--green);
+                font-size: 10px;
+                font-weight: 600;
+                border:1px solid var(--green);
+            }
+            .hero-image {
+                background: url(https://i.postimg.cc/HLHYZwYF/indonesia-forest-map.jpg);
+                background-size: cover;
+                background-repeat:no-repeat;
+                background-position: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .stat-one {
+                height: 45px;
+                width: 168px;
+                padding: 9px;
+                border-radius: 6px;
+                display: flex;
+                gap: 9px;
+                background-color: var(--white);
+                border:1px solid var(--secondary-border);
+                margin-left: 243px;
+                margin-top: -16px;
+            }
+            .stat-one-logo {
+                height: 27px;
+                width: 27px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--green);
+                color: var(--white);
+                border-radius: 5px;
+            }
+            .stat-one-info {
+                font-size: 9px;
+                color: var(--secondary-text);
+            }
+            .stat-one-info strong {
+                font-size: 13px;
+                color: var(--green);
+            }
+            .stat-two {
+                height: 45px;
+                width: 168px;
+                padding: 9px;
+                border-radius: 6px;
+                display: flex;
+                gap: 9px;
+                background-color: var(--white);
+                border:1px solid var(--secondary-border);
+                margin-left: 70px;
+            }
+            .stat-two-logo {
+                height: 27px;
+                width: 27px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--green);
+                color: var(--white);
+                border-radius: 5px;
+            }
+            .stat-two-info {
+                font-size: 9px;
+                color: var(--secondary-text);
+            }
+            .stat-two-info strong {
+                font-size: 13px;
+                color: var(--green);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="website">
+            <nav class="navbar">
+                <div class="logo">
+                    Nirmala
+                </div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Issues</a>
+                    <a href="#">Programs</a>
+                    <a href="#">Publications</a>
+                </div>
+                <button class="donate">
+                    Donate Now
+                </button>
+            </nav>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>
+                        <span>
+                            Indonesia's Forests
+                        </span>
+                        Need<br>Us More Than Ever.
+                    </h1>
+                    <p>
+                        We work with local communities to restore forests,protect biodiversity,and promote sustainable land management across Indonesia.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="primary-btn">Donate now</button>
+                        <button class="secondary-btn">Join as Volunteer</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="stat-one">
+                        <div class="stat-one-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trees"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/></svg>
+                        </div>
+                        <div class="stat-one-info">
+                            <strong>21%</strong><br>
+                            Tree Cover Lost Since 2001
+                        </div>
+                    </div>
+                    <div class="stat-two">
+                        <div class="stat-two-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+                        </div>
+                        <div class="stat-two-info">
+                            <strong>51%</strong><br>
+                            Indonesia's Land Still Forested
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about">
+                <div class="about-image">
+                    <img src="">
+                </div>
+                <div class="about-content">
+                    <h2 class="about-title">
+                        About Nirmala
+                    </h2>
+                    <p>
+                        Indonesia's forests are disappearing faster than erver,putting wildlife,ecosystem,and communities at risk.Nirmala exists to restore what has been lost by empowering people,protecting biodiversity,and creating lasting environmental impact.
+                    </p>
+                    <div class="quote">
+                        "We Protect What Matters Most"
+                    </div>
+                </div>
+            </section>
+            <section class="issues">
+                <div class="issue-menu">
+                    <h2>
+                        Understanding the<span>Issues</span><br>
+                        That Shape Our Future.
+                    </h2>
+                    <div class="issue active">
+                        <div class="issue-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+                        </div>
+                        Forest Loss
+                    </div>
+                    <div class="issue">
+                        <div class="issue-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tree-palm"><path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4"/><path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3"/><path d="M5.89 9.71c-2.15 2.15-2.3 5.47-.35 7.43l4.24-4.25.7-.7.71-.71 2.12-2.12c-1.95-1.96-5.27-1.8-7.42.35"/><path d="M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14"/></svg>
+                        </div>
+                        Palm Oil Expansion
+                    </div>
+                    <div class="issue">
+                        <div class="issue-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-germ-off"><path d="m11 2 .925 1.848"/><path d="M13 15h.01"/><path d="M13.424 7.768a2 2 0 112.808 2.808"/><path d="m16 21-1-2.472"/><path d="M16.988 16.988A12 12 0 019 20a5 5 0 01-2.759-9.171 8.8 8.8 0 002.307-2.28"/><path d="m19 2-1 1.804"/><path d="m2 19 2.746-1.373"/><path d="m2 2 20 20"/><path d="m22 16-2.474-2.13a12 12 0 001.376-3.786 6 6 0 00-10.313-5.151"/><path d="m22 5-1.804 1"/><path d="m3 10 2 2"/><path d="M9 16h.01"/><path d="M9 20v2"/></svg>
+                        </div>
+                        Biodiversity Decline
+                    </div>
+                </div>
+                <div class="isuue-image">
+                    <span>lost 33 millions hectares<br>of tree cover since 2001.</span>
+                </div>
+            </section>
+            <section class="why-section">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                    </div>
+                    <h3>
+                        Climate
+                    </h3>
+                    <p>
+                        Forests absorb carbon emissions, regulate temperatures,
+                        and help reduce the impacts of climate change across Indonesia.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-biohazard"><circle cx="12" cy="11.9" r="2"/><path d="M6.7 3.4c-.9 2.5 0 5.2 2.2 6.7C6.5 9 3.7 9.6 2 11.6"/><path d="m8.9 10.1 1.4.8"/><path d="M17.3 3.4c.9 2.5 0 5.2-2.2 6.7 2.4-1.2 5.2-.6 6.9 1.5"/><path d="m15.1 10.1-1.4.8"/><path d="M16.7 20.8c-2.6-.4-4.6-2.6-4.7-5.3-.2 2.6-2.1 4.8-4.7 5.2"/><path d="M12 13.9v1.6"/><path d="M13.5 5.4c-1-.2-2-.2-3 0"/><path d="M17 16.4c.7-.7 1.2-1.6 1.5-2.5"/><path d="M5.5 13.9c.3.9.8 1.8 1.5 2.5"/></svg>
+                    </div>
+                    <h3>
+                        Biodiversity
+                    </h3>
+                    <p>
+                        Indonesia's forests provide habitat for countless plant and animal species,
+                        many pf which exist nowwhere else on earth
+                    </p>
+                </div>
+                <div class="why-text">
+                    <h2>
+                        Why It Matters?
+                    </h2>
+                    <p>
+                        Healthy forests are essential for climate stability, biodiversity,
+                        clean water, and the well-being of millions of people across Indonesia.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplet"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+                    </div>
+                    <h3>
+                        Clean Water
+                    </h3>
+                    <p>
+                        Healthy forests protect watersheds, improve water quality,
+                        and secure reliable freshwater sources for communities.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-group"><path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1"/><path d="M19 10h1a2 2 0 012 2v1"/><path d="M5 10H4a2 2 0 00-2 2v1"/><circle cx="12" cy="11" r="3"/><circle cx="18" cy="4" r="2"/><circle cx="6" cy="4" r="2"/></svg>
+                    </div>
+                    <h3>
+                        Communities
+                    </h3>
+                    <p>
+                        Millions of people rely on forests for food, livelihoods, culture 
+                        heritage and a healthier environment.
+                    </p>
+                </div>
+            </section>
+            <section class="programs">
+                <div class="program-text">
+                    <h2>
+                        <span>Our programs</span> <span>for a better future</span>
+                    </h2>
+                    <p>
+                        Every conservation effort contributes to healthier forests, thriving biodiversity, and stronger local communities across Indonesia.
+                    </p>
+                    <div class="check">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
+                        Participate in forest restoration initiatives
+                    </div>
+                    <div class="check">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
+                        Support biodiversity conservation across Indonesia
+                    </div>
+                    <div class="check">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
+                        Create lasting environmental impact together
+                    </div>
+                    <button class="program-btn">
+                        Join as Volunteer
+                    </button>
+                </div>
+                <div class="program-cards">
+                    <div class="program-card">
+                        <img src="https://images.pexels.com/photos/10316168/pexels-photo-10316168.jpeg">
+                        <h3>
+                            Forest Restoration
+                        </h3>
+                        <p>
+                            Reforest degraded lands and restore vital ecosystems.
+                        </p>
+                    </div>
+                     <div class="program-card">
+                        <img src="https://images.pexels.com/photos/5029919/pexels-photo-5029919.jpeg">
+                        <h3>
+                            Community Partnership
+                        </h3>
+                        <p>
+                            Empower local communities through sustainable initiatives.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="insights">
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <img src="https://images.pexels.com/photos/12457661/pexels-photo-12457661.jpeg">
+                        <div class="insight-content">
+                            <div class="date">
+                                July 26, 2026
+                            </div>
+                            <h3>
+                                Protecting Indonesia's<br>
+                                Remaining Forest
+                            </h3>
+                            <p>
+                                Indonesia's forests are among the most
+                                biodiverse ecosystems in the world.
+                            </p>
+                            <a href="#" class="read-more">
+                                Read More
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <img src="https://images.pexels.com/photos/9903332/pexels-photo-9903332.jpeg">
+                        <div class="insight-content">
+                            <div class="date">
+                                July 26, 2026
+                            </div>
+                            <h3>
+                                Understanding<br>
+                                Sustainable Palm Oil
+                            </h3>
+                            <p>
+                                Palm oil is an important commodity for Indonesia's economy.
+                            </p>
+                            <a href="#" class="read-more">
+                                Read More
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <img src="https://images.pexels.com/photos/9501978/pexels-photo-9501978.jpeg">
+                        <div class="insight-content">
+                            <div class="date">
+                                June 7, 2026
+                            </div>
+                            <h3>
+                                Hope Begins with<br>
+                                Communities
+                            </h3>
+                            <p>
+                                Lasting conservation starts with people.
+                                By working alongside local communities.
+                            </p>
+                            <a href="#" class="read-more">
+                                Read More
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="view-all">
+                    View All
+                </button>
+            </section>
+            <section class="cta">
+                <h2>
+                    Every Contribution Makes<br>
+                    a Difference.
+                </h2>
+                <p>
+                    Your support helps restore forests, protect biodiversity,
+                    and empower local communities across Indonesia. Together,
+                    we can create lasting change.
+                </p>
+                <button>
+                    Donate Now
+                </button>
+            </section>
+            <footer>
+                <div class="footer-brand">
+                    <h2>
+                        Nirmala
+                    </h2>
+                    <p>
+                        Rooted in Nature.
+                        Growing Together.
+                    </p>
+                    <div class="social">
+                        <span>𝕏</span>
+                        <span>◎</span>
+                        <span>▶</span>
+                        <span>♪</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="navigation">
+                        <h2>Navigation</h2>
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Issues</a>
+                        <a href="#">Programs</a>
+                        <a href="#">Publications</a>
+                    </div>
+                    <div class="legal">
+                        <h2>Legal</h2>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Security</a>
+                    </div>
+                    <div class="contact">
+                        <h2>Contact Us</h2>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                        </span>
+                        <span>hello@nirmala.org</span><br>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+                        </span>
+                        <span>+62 21 5088 4621</span><br>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                        </span>
+                        <span>Indonesia</span>
+                    </div>
+                </div>
+            </footer>
+            <div class="copy-right">
+                <span>
+                    &copy; 2026 Nirmala Foundation. All rights reserved.
+                </span>
+                <span>
+                    Created by MRH Mithun
+                </span>
+            </div>
+        </div>
+    </body>
+</html>

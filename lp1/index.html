@@ -37,6 +37,17 @@
                 display: flex;
                 gap: 15px;
             }
+            .links a {
+                text-decoration: none;
+                color: black;
+                display: inline-block;
+                transition: .1s;
+            }
+            .links a:hover {
+                color:rgb(47, 224, 255);
+                transform: scale(1.1);
+                text-decoration: underline;
+            }
             .nav-right {
                 display: flex;
                 align-items: center;
@@ -300,13 +311,13 @@
                     <span>/sales@reelers.io</span>
                 </div>
                 <div class="links">
-                    <span>Product</span>
+                    <a href="#">Product</a>
                     <span>.</span>
-                    <span>Solutions</span>
+                    <a href="#">Solutions</a>
                     <span>.</span>
-                    <span>Pricing</span>
+                    <a href="#">Pricing</a>
                     <span>.</span>
-                    <span>Developers</span>
+                    <a href="#">Developers</a>
                 </div>
                 <div class="nav-right">
                     <span class="line"></span>
