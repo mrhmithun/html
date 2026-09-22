@@ -12,6 +12,7 @@
                 --card-color: #ecedec;
                 --secondary-text: #777;
                 --secondary-border: #edf0ed;
+                --black: #000;
             }
             * {
                 margin: 0;
@@ -63,7 +64,6 @@
                 border: none;
             }
             .hero {
-                min-height: 250px;
                 display: grid;
                 grid-template-columns: 1fr 1.15fr;
                 max-width: 1100px;
@@ -178,7 +178,6 @@
                 color: var(--green);
             }
             .about {
-                min-height: 250px;
                 display: grid;
                 grid-template-columns: 1fr 1.15fr;
                 max-width: 1100px;
@@ -216,7 +215,6 @@
             }
             .issues {
                 max-width: 1100px;
-                min-height: 270px;
                 display: grid;
                 grid-template-columns: 1fr 1.15fr;
                 background-color: var(--card-color);
@@ -438,13 +436,109 @@
             }
             .view-all {
                 display: block;
-                margin: 22px auto 0;
+                margin: 22px auto 60px;
                 border: 1px solid var(--green);
                 border-radius: 5px;
                 padding: 6px 14px;
                 font-size: 12px;
                 background: var(--white);
                 color: var(--green);
+            }
+            .cta {
+                max-width: 1100px;
+                margin: auto;
+                padding: 25px 30px;
+                background: url(https://images.pexels.com/photos/16424014/pexels-photo-16424014.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 7px;
+            }
+            .cta > h2 {
+                font-size: 26px;
+                margin-bottom: 10px;
+                color: var(--white);
+            }
+            .cta > p {
+                font-size: 12px;
+                margin-bottom: 20px;
+                color: var(--card-color);
+            }
+            .cta > button {
+                background: var(--white);
+                color: var(--green);
+                font-size: 10px;
+                font-weight: 700;
+                padding: 10px 17px;
+                border: none;
+                border-radius: 6px;
+            }
+            footer {
+                max-width: 1100px;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 90px;
+            }
+            .footer-column {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .navigation > a,
+            .legal > a {
+                font-weight: 100;
+                font-size: 12px;
+                color: var(--secondary-text);
+                display: flex
+            }
+            .navigation,
+            .legal {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .footer-brand > h2 {
+                color: var(--green);
+            }
+            .navigation > h3,
+            .legal > h3,
+            .contact > h3 {
+                color: var(--green);
+            }
+            .footer-brand > p {
+                font-size: 14px;
+            }
+            .social {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .contact > div {
+                font-size: 14px;
+                color: var(--secondary-text);
+            }
+            .contact svg {
+                color: var(--black);
+            }
+            .copy-right {
+                max-width: 1100px;
+                margin: auto;
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--secondary-text);
+                display: flex;
+                justify-content: space-between;
+                margin-top: 60px;
             }
         </style>
     </head>
@@ -743,9 +837,9 @@
                     a Difference.
                 </h2>
                 <p>
-                    Your support helps restore forests, protect biodiversity,
-                    and empower local communities across Indonesia. Together,
-                    we can create lasting change.
+                    Your support helps restore forests, protect biodiversity,and<br>
+                    empower local communities across Indonesia. Together,we<br>
+                    can create lasting environmental impact.
                 </p>
                 <button>
                     Donate Now
@@ -769,7 +863,7 @@
                 </div>
                 <div class="footer-column">
                     <div class="navigation">
-                        <h2>Navigation</h2>
+                        <h3>Navigation</h3>
                         <a href="#">Home</a>
                         <a href="#">About Us</a>
                         <a href="#">Issues</a>
@@ -777,25 +871,31 @@
                         <a href="#">Publications</a>
                     </div>
                     <div class="legal">
-                        <h2>Legal</h2>
+                        <h3>Legal</h3>
                         <a href="#">Privacy</a>
                         <a href="#">Terms</a>
                         <a href="#">Security</a>
                     </div>
                     <div class="contact">
-                        <h2>Contact Us</h2>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-                        </span>
-                        <span>hello@nirmala.org</span><br>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
-                        </span>
-                        <span>+62 21 5088 4621</span><br>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                        </span>
-                        <span>Indonesia</span>
+                        <h3>Contact Us</h3>
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                            </span>
+                            <span>hello@nirmala.org</span>
+                        </div>
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+                            </span>
+                            <span>+62 21 5088 4621</span>
+                        </div>
+                        <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
+                            <span>Indonesia</span>
+                        </div>
                     </div>
                 </div>
             </footer>
