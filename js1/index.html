@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgb(193, 240, 247);
+            }
+            .full-container {
+                width: 430px;
+                padding: 35px;
+                background: #fff;
+                border-radius: 18px;
+            }
+            .heading h1 {
+                font-size: 27px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            #student {
+                display: flex;
+            }
+            #mark {
+                display: flex;
+            }
+            label {
+                display: block;
+                margin-bottom: 9px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+            input {
+                width: 100%;
+                padding: 13px 14px;
+                border: 1px solid #000000;
+                border-radius: 9px;
+                font-size: 15px;
+                margin-bottom: 9px;
+            }
+            #submit_btn {
+                width: 100%;
+                padding: 14px;
+                border: none;
+                border-radius: 9px;
+                background: rgb(0, 204, 255);
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+            #result div {
+                width: 100%;
+                padding: 14px;
+                margin-top: 20px;
+                border-radius: 9px;
+                color: #fff;
+                font-size: 16px;
+            }
+            .green {
+                background: green;
+            }
+            .red {
+                background: red;
+            }
+            .yellow {
+                background: yellow;
+            }
+            .blue {
+                background: rgb(20, 155, 218);
+            }
+            .lime {
+                background: rgb(181, 224, 117);
+            }
+            .orange {
+                background: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="full-container">
+            <div class="heading">
+                <h1>Student Result</h1>
+            </div>
+            <form action="/action_page.php">
+                <div>
+                    <label for="student">Student Name</label>
+                    <input id="student" type="text" name="student_name"> 
+                </div>
+                <div>
+                    <label for="mark">Total Mark</label>
+                    <input id="mark" type="number" name="total_mark" min="0" max="100">
+                </div>
+            </form>
+            <button id="submit_btn">Submit</button>
+            <div id="result"></div>
+        </div>
+        <script>
+            let chatro = document.getElementById('student');
+            let koto_number = document.getElementById('mark');
+            let submit_btn = document.getElementById('submit_btn');
+            const pass_mark = 33;
+            const d_mark = 39;
+            const c_mark = 49;
+            const b_mark = 59;
+            const a_minus_mark = 69;
+            const a_mark = 79;
+            const a_plus_mark = 80;
+            submit_btn.addEventListener('click',function(e){
+                e.preventDefault();
+                let naam = chatro.value;
+                let mark = koto_number.value;
+                if (mark >= a_plus_mark) {
+                    r_tamplate(naam + ' Grade- A+','green');
+                }
+                else if (mark >= a_mark) {
+                    r_tamplate(naam + ' Grade- A','lime');
+                }
+                else if (mark >= a_minus_mark) {
+                    r_tamplate(naam + ' Grade- A-','blue');
+                }
+                else if (mark >= b_mark) {
+                    r_tamplate(naam + ' Grade- B','blue');
+                }
+                else if (mark >= c_mark) {
+                    r_tamplate(naam + ' Grade- C','orange');
+                }
+                else if (mark >= d_mark) {
+                    r_tamplate(naam + ' Grade- D','lime');
+                }
+                else if (mark >= pass_mark) {
+                    r_tamplate(naam + ' konomote pass','yellow');
+                }
+                else {
+                    r_tamplate(naam + ' Innanillah','red');
+                }
+            });
+            function r_tamplate(text, css_class) {
+                let html_target = document.getElementById('result');
+                let html = `
+                <div class="${css_class}">${text}</div>
+                `;
+                html_target.innerHTML = html;
+            }
+        </script>
+    </body>
+</html>
