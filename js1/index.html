@@ -15,6 +15,7 @@
                 justify-content: center;
                 align-items: center;
                 background: rgb(193, 240, 247);
+                flex-direction: column;
             }
             .full-container {
                 width: 430px;
@@ -58,7 +59,7 @@
                 font-weight: bold;
                 margin-top: 10px;
             }
-            #result div {
+            #result div, #form-error div {
                 width: 100%;
                 padding: 14px;
                 margin-top: 20px;
@@ -84,6 +85,29 @@
             .orange {
                 background: orange;
             }
+            #result-table {
+                margin-top: 30px;
+                min-width: 560px;
+                display: none;
+            }
+            table {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            td, th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            tr:nth-child(even){background-color: #f2f2f2}
+            tr:hover {background-color: #ddd;}
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
         </style>
     </head>
     <body>
@@ -100,9 +124,22 @@
                     <label for="mark">Total Mark</label>
                     <input id="mark" type="number" name="total_mark" min="0" max="100">
                 </div>
+                <div id="form-error"></div>
             </form>
             <button id="submit_btn">Submit</button>
             <div id="result"></div>
+        </div>
+        <div id="result-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Number</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
         </div>
         <script>
             let chatro = document.getElementById('student');
@@ -115,41 +152,96 @@
             const a_minus_mark = 69;
             const a_mark = 79;
             const a_plus_mark = 80;
-            submit_btn.addEventListener('click',function(e){
+            let list = [];
+            mark.addEventListener('keyup', function(e){
+                let mark = koto_number.value;
+                if (mark > 100) {
+                    r_tamplate('Number can\'t exceed 100', 'red', form_error);
+                    document.getElementById('submit_btn').disabled = true;
+                }
+                else {
+                    document.getElementById('submit_btn').disabled = false;
+                }
+            });
+                submit_btn.addEventListener('click',function(e){
                 e.preventDefault();
                 let naam = chatro.value;
                 let mark = koto_number.value;
-                if (mark >= a_plus_mark) {
-                    r_tamplate(naam + ' Grade- A+','green');
+                let grade = '';
+
+                let result = document.getElementById('result');
+                let form_error = document.getElementById('form-error');
+
+
+                if (mark > 100) {
+                    r_tamplate('Number can\'t exceed 100', 'red', form_error);
+                    return;
+                }
+
+
+                else if (mark >= a_plus_mark) {
+                    r_tamplate(naam + ' Grade- A+','green', result);
+                    grade = 'A+';
                 }
                 else if (mark >= a_mark) {
-                    r_tamplate(naam + ' Grade- A','lime');
+                    r_tamplate(naam + ' Grade- A','lime', result);
+                    grade = 'A';
                 }
                 else if (mark >= a_minus_mark) {
-                    r_tamplate(naam + ' Grade- A-','blue');
+                    r_tamplate(naam + ' Grade- A-','blue', result);
+                    grade = 'A-';
                 }
                 else if (mark >= b_mark) {
-                    r_tamplate(naam + ' Grade- B','blue');
+                    r_tamplate(naam + ' Grade- B','blue', result);
+                    grade = 'B';
                 }
                 else if (mark >= c_mark) {
-                    r_tamplate(naam + ' Grade- C','orange');
+                    r_tamplate(naam + ' Grade- C','orange', result);
+                    grade = 'C';
                 }
                 else if (mark >= d_mark) {
-                    r_tamplate(naam + ' Grade- D','lime');
+                    r_tamplate(naam + ' Grade- D','lime', result);
+                    grade = 'D';
                 }
                 else if (mark >= pass_mark) {
-                    r_tamplate(naam + ' konomote pass','yellow');
+                    r_tamplate(naam + ' konomote pass','yellow', result);
+                    grade = 'E';
                 }
                 else {
-                    r_tamplate(naam + ' Innanillah','red');
+                    r_tamplate(naam + ' Innanillah','red', result);
+                    grade = 'F';
                 }
+
+                let res_table = document.getElementById('result-table');
+
+                res_table.style.display = 'block';
+
+                list.push([naam, mark, grade]);
+
+                document.getElementById('list').innerHTML = '';
+                
+                list.forEach(l => {
+                    l_tamplate(l[0], l[1], l[2]);
+                });
+
             });
-            function r_tamplate(text, css_class) {
-                let html_target = document.getElementById('result');
+
+            function r_tamplate(text, css_class, html_target) {
                 let html = `
                 <div class="${css_class}">${text}</div>
                 `;
                 html_target.innerHTML = html;
+            }
+
+            function l_tamplate(name, mark, grade) {
+                let html = `
+                <tr>
+                <td>${name}</td>
+                <td>${mark}</td>
+                <td>${grade}</td>
+                </tr>
+                `;
+                document.getElementById('list').innerHTML += html;
             }
         </script>
     </body>
