@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <style>
       * {
         margin: 0;
@@ -121,7 +121,7 @@
       }
 
       tr:nth-child(even) {
-        background-color: #f2f2f2
+        background-color: #f2f2f2;
       }
 
       tr:hover {
@@ -132,7 +132,7 @@
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
-        background-color: #04AA6D;
+        background-color: #04aa6d;
         color: white;
       }
 
@@ -159,11 +159,11 @@
       <form action="/action_page.php">
         <div>
           <label for="student">Student Name</label>
-          <input id="student" type="text" name="student_name">
+          <input id="student" type="text" name="student_name" />
         </div>
         <div>
           <label for="mark">Total Mark</label>
-          <input id="mark" type="number" name="total_mark" min="0" max="100">
+          <input id="mark" type="number" name="total_mark" min="0" max="100" />
         </div>
         <div id="form-error"></div>
       </form>
@@ -184,9 +184,9 @@
       </table>
     </div>
     <script>
-      let chatro = document.getElementById('student');
-      let koto_number = document.getElementById('mark');
-      let submit_btn = document.getElementById('submit_btn');
+      let chatro = document.getElementById("student");
+      let koto_number = document.getElementById("mark");
+      let submit_btn = document.getElementById("submit_btn");
       const pass_mark = 33;
       const d_mark = 39;
       const c_mark = 49;
@@ -195,57 +195,59 @@
       const a_mark = 79;
       const a_plus_mark = 80;
       let list = [];
-      var form_error = document.getElementById('form-error');
-      mark.addEventListener('keyup', function(e) {
+      var form_error = document.getElementById("form-error");
+      mark.addEventListener("keyup", function (e) {
         let mark = koto_number.value;
         if (mark > 100) {
-          r_tamplate('Number can\'t exceed 100', 'red', form_error);
-          document.getElementById('submit_btn').disabled = true;
+          r_tamplate("Number can't exceed 100", "red", form_error);
+          document.getElementById("submit_btn").disabled = true;
         } else {
-          document.getElementById('submit_btn').disabled = false;
-          form_error.innerHTML = '';
+          document.getElementById("submit_btn").disabled = false;
+          form_error.innerHTML = "";
         }
       });
-      submit_btn.addEventListener('click', function(e) {
+      submit_btn.addEventListener("click", function (e) {
         e.preventDefault();
         let naam = chatro.value;
         let mark = koto_number.value;
-        let grade = '';
-        let result = document.getElementById('result');
+        let grade = "";
+        let result = document.getElementById("result");
         if (mark > 100) {
-          r_tamplate('Number can\'t exceed 100', 'red', form_error);
+          r_tamplate("Number can't exceed 100", "red", form_error);
           return;
         } else if (mark >= a_plus_mark) {
-          r_tamplate(naam + ' Grade- A+', 'green', result);
-          grade = 'A+';
+          r_tamplate(naam + " Grade- A+", "green", result);
+          grade = "A+";
         } else if (mark >= a_mark) {
-          r_tamplate(naam + ' Grade- A', 'lime', result);
-          grade = 'A';
+          r_tamplate(naam + " Grade- A", "lime", result);
+          grade = "A";
         } else if (mark >= a_minus_mark) {
-          r_tamplate(naam + ' Grade- A-', 'blue', result);
-          grade = 'A-';
+          r_tamplate(naam + " Grade- A-", "blue", result);
+          grade = "A-";
         } else if (mark >= b_mark) {
-          r_tamplate(naam + ' Grade- B', 'blue', result);
-          grade = 'B';
+          r_tamplate(naam + " Grade- B", "blue", result);
+          grade = "B";
         } else if (mark >= c_mark) {
-          r_tamplate(naam + ' Grade- C', 'orange', result);
-          grade = 'C';
+          r_tamplate(naam + " Grade- C", "orange", result);
+          grade = "C";
         } else if (mark >= d_mark) {
-          r_tamplate(naam + ' Grade- D', 'lime', result);
-          grade = 'D';
+          r_tamplate(naam + " Grade- D", "lime", result);
+          grade = "D";
         } else if (mark >= pass_mark) {
-          r_tamplate(naam + ' konomote pass', 'yellow', result);
-          grade = 'E';
+          r_tamplate(naam + " konomote pass", "yellow", result);
+          grade = "E";
         } else {
-          r_tamplate(naam + ' Innanillah', 'red', result);
-          grade = 'F';
+          r_tamplate(naam + " Innanillah", "red", result);
+          grade = "F";
         }
-        let res_table = document.getElementById('result-table');
-        res_table.style.display = 'block';
-        if (!list.some(l => l[0] === naam && l[1] === mark || l[2] === grade)) {
+        let res_table = document.getElementById("result-table");
+        res_table.style.display = "block";
+        if (
+          !list.some((l) => (l[0] === naam && l[1] === mark) || l[2] === grade)
+        ) {
           list.push([naam, mark, grade]);
         }
-        document.getElementById('list').innerHTML = '';
+        document.getElementById("list").innerHTML = "";
         listGen(list);
       });
 
@@ -269,13 +271,13 @@
 							</td>
 						</tr>
                 `;
-        document.getElementById('list').innerHTML += html;
+        document.getElementById("list").innerHTML += html;
       }
-      document.getElementById('list').addEventListener('click', function(e) {
-        if (e.target.classList.contains('delete')) {
+      document.getElementById("list").addEventListener("click", function (e) {
+        if (e.target.classList.contains("delete")) {
           let delItem = e.target.dataset.index;
           list.splice(delItem, 1);
-          document.getElementById('list').innerHTML = '';
+          document.getElementById("list").innerHTML = "";
           listGen(list);
         }
       });
