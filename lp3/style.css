@@ -1,0 +1,303 @@
+:root {
+    --teal-blue: #2A8E9E;
+    --pale-ice-blue: #E9F3F4;
+    --deep-midnight-purple:#180D39;
+    --charcoal-black:#1D1E20;
+    --white: #fff;
+    --deep-teal-blue: #023347;
+    --border: #E9EEEE;
+    --secondary-text: #777;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: var(--white);
+}
+.full-page {
+    max-width: 1200px;
+    margin: auto;
+}
+.upper-part {
+    background-color: var(--pale-ice-blue);
+}
+.navbar {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo-icon {
+    height: 27px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--deep-teal-blue);
+    color: var(--white);
+    border-radius: 5px;
+}
+.logo span {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--deep-teal-blue);
+    margin-left: 5px;
+}
+.nav-links {
+    display: flex;
+    gap: 25px;
+    margin-left: -300px;
+}
+a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--deep-teal-blue);
+}
+a:hover {
+    transform: scale(1.2);
+}
+.login-btn {
+    background: var(--white);
+    color: var(--deep-teal-blue);
+    padding: 10px 20px;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.login-btn:hover {
+    background-color: var(--pale-ice-blue);
+}
+.signup-btn {
+    background: var(--teal-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.signup-btn:hover {
+    background-color: var(--deep-teal-blue);
+}
+.hero {
+    max-width: 1100px;
+    margin: 42px auto 0;
+    display: flex;
+}
+.hero-left h1 {
+    color: var(--deep-midnight-purple);
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+.hero-left p {
+    color: var(--secondary-text);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.hero-left {
+    width: 55%;
+    margin-top: 40px;
+}
+.email-box {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    overflow: hidden;
+}
+.email-box input {
+    height: 100%;
+    padding: 0 13px;
+    border: none;
+    outline: none;
+    color: var(--charcoal-black);
+}
+.email-box button {
+    height: 100%;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: var(--teal-blue);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 500;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.email-box button:hover {
+    background: var(--deep-teal-blue);
+}
+.email-box button span {
+    display: flex;
+    align-items: center;
+}
+.email-box button svg {
+    width: 18px;
+    height: 18px;
+}
+.brands {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 25px;
+}
+.brands h3 {
+    color: var(--deep-teal-blue);
+    font-size: 20px;
+    font-weight: 750;
+}
+.hero-right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.invoice {
+    height: 320px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(12, 48, 58, 0.06);
+}
+.invoice-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.header-logo {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--teal-blue);
+    color: var(--white);
+    border-radius: 5px;
+}
+.user-info h3 {
+    font-size: 15px;
+    color: var(--charcoal-black);
+}
+.user-info p {
+    font-size: 12px;
+    color: var(--secondary-text);
+}
+.invoice-details {
+    width: 280px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.label, .date {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+.amount {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--charcoal-black);
+}
+.option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.option > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.option span {
+    font-size: 14px;
+    color: var(--deep-midnight-purple);
+    font-weight: 600;
+}
+.pay-btn {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    background: var(--deep-teal-blue);
+    color: var(--white);
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card-box {
+    height: 200px;
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card-box {
+    width: 150px;
+    height: 200px;
+    background: #298e9e;
+    color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: -130px;
+    margin-top: -20px;
+}
+
+.card-top {
+    height: 140px;
+    padding: 0;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 12px;
+    padding: 10px 0 5px 10px;
+}
+
+.card-number {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.card-bottom {
+    height: 60px;
+    background: #003344;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visa {
+    padding: 0 0 0 10px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.contactless {
+    padding-right: 10px;
+}
